@@ -1,0 +1,11 @@
+MBM-Overlay
+MBM-box
+MBM-titleBox
+	MBM-Text
+	MBM-closeButton
+MBM-TextBox
+	MBM-Text
+MBM-buttonBox
+	MBM-okButton
+
+

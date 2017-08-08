@@ -1,0 +1,49 @@
+{
+  "name": "modal-box-message",
+  "version": "2.0.7",
+  "description": "A modal box for display a message",
+  "main": "./dist/ModalBoxMessage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "gulp ts:quickTest",
+    "dist": "gulp dist",
+    "docs": "npm run typedoc -- --options typedoc.json --excludePrivate",
+    "typedoc": "typedoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuigiSenzamici/ModalBoxMessage.git"
+  },
+  "keywords": [
+    "Modal",
+    "Box",
+    "Display",
+    "Message"
+  ],
+  "author": "Luigi Senzamici (luigisenzamici@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuigiSenzamici/ModalBoxMessage/issues"
+  },
+  "homepage": "https://github.com/LuigiSenzamici/ModalBoxMessage#readme",
+  "devDependencies": {
+    "@types/core-js": "0.9.36",
+    "@types/lodash": "4.14.51",
+    "@types/node": "7.0.7",
+    "browserify": "14.4.0",
+    "gulp": "3.9.1",
+    "gulp-browserify": "0.5.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "2.6.0",
+    "gulp-stylus": "2.6.0",
+    "gulp-typedoc": "2.0.2",
+    "gulp-typescript": "3.2.1",
+    "gulp-uglify": "3.0.0",
+    "lodash": "4.17.2",
+    "run-sequence": "2.1.0",
+    "typedoc": "0.8.0",
+    "typescript": "2.4.2",
+    "vinyl-transform": "1.0.0"
+  },
+  "dependencies": {}
+}
