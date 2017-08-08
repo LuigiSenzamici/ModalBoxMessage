@@ -10,9 +10,9 @@ npm install modal-box-message --save
 
 get boxclass from module
 ```javascript
-var boxClass = require("Modal-Box-Input").ModalBoxInput;
-var Box = new boxClass("title", "message");
-Box.Open();
+var alertClass = require("./ModalBoxMessage.js").ModalBoxMessage;
+var alert = new alertClass("Error", "anonymous function thrown an error!");
+alert.Open();
 ```
 ![Here Example](http://LuigiSenzamici.com/Content/Images/BoxMessageExample.PNG)
 
