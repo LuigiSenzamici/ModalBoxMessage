@@ -342,8 +342,6 @@ class ModalBoxMessage {
                 //close button
                 this.closeButton = new ElementoButton("MB-closeButton", "MBM-closeButton", N_titleBox, "X");
                 let N_closeButton = this.closeButton.create();
-                this.closeButton.setStyle("position:relative;min-width:16px;min-height:17px;padding:0;font-weight:700;float:right;");
-
                 var that = this;
                 function Event_Chiudi(event: any): void {
                         that.Close();
