@@ -338,6 +338,13 @@ var ModalBoxMessage = (function () {
         if (titolo === void 0) { titolo = ""; }
         if (messaggio === void 0) { messaggio = ""; }
         if (buttonText === void 0) { buttonText = "Ok"; }
+        this.cssDefaultFileName = "ModalBoxMessage.css";
+        this.cssDefaultFilePath = "node_modules/modal-box-message/dist/";
+        this.cssDefaultBasePath = "../";
+        this.cssFileName = "ModalBoxMessage.css";
+        this.cssFilePath = "node_modules/modal-box-message/dist/";
+        this.cssBasePath = "../";
+        this.currentCssFile = "";
         this.overlay = new Overlay(false);
         this.mainBox = new Box(false);
         var N_overlay = this.overlay.create();
@@ -347,6 +354,11 @@ var ModalBoxMessage = (function () {
         this.genButtonBox(N_mainBox, buttonText);
         this.genCssReference();
     }
+    ModalBoxMessage.prototype.updateCssLinkRef = function () {
+        var link = document.querySelectorAll('link[data-module="cssPath"')[0];
+        this.currentCssFile = this.cssBasePath + this.cssFilePath + this.cssFileName;
+        link.setAttribute("href", this.currentCssFile);
+    };
     ModalBoxMessage.prototype.genTitolo = function (parent, titolo) {
         //titleBox
         this.titleBox = new ElementoBase("div", "MB-titleBox", "MBM-titleBox", parent);
@@ -359,7 +371,6 @@ var ModalBoxMessage = (function () {
         //close button
         this.closeButton = new ElementoButton("MB-closeButton", "MBM-closeButton", N_titleBox, "X");
         var N_closeButton = this.closeButton.create();
-        this.closeButton.setStyle("position:relative;min-width:16px;min-height:17px;padding:0;font-weight:700;float:right;");
         var that = this;
         function Event_Chiudi(event) {
             that.Close();
@@ -418,10 +429,17 @@ var ModalBoxMessage = (function () {
         return res;
     };
     ModalBoxMessage.prototype.genCssReference = function () {
+        var res = document.querySelectorAll('link[data-module="cssPath"');
+        if (res != null && res != undefined && res.length > 0)
+            return;
         var head = document.getElementsByTagName("head")[0];
         var stile = document.createElement("link");
         stile.setAttribute("rel", "stylesheet");
-        stile.setAttribute("href", "node_modules/Modal-Box-Message/dist/ModalBoxMessage.css");
+        stile.setAttribute("data-module", "cssPath");
+        this.cssBasePath = this.cssDefaultBasePath;
+        this.cssFileName = this.cssDefaultFileName;
+        this.cssFilePath = this.cssDefaultFilePath;
+        stile.setAttribute("href", this.cssDefaultBasePath + this.cssDefaultFilePath + this.cssDefaultBasePath);
         head.appendChild(stile);
     };
     ModalBoxMessage.prototype.Open = function () {
@@ -444,14 +462,31 @@ var ModalBoxMessage = (function () {
     ModalBoxMessage.prototype.setOKButtonText = function (value) {
         this.okButton.setText(value);
     };
+    ModalBoxMessage.prototype.setCssFileName = function (filename) {
+        this.cssFileName = filename;
+        this.updateCssLinkRef();
+    };
+    ModalBoxMessage.prototype.setCssFilePath = function (filepath) {
+        this.cssFilePath = filepath;
+        this.updateCssLinkRef();
+    };
+    ModalBoxMessage.prototype.setCssBasePath = function (filebase) {
+        this.cssBasePath = filebase;
+        this.updateCssLinkRef();
+    };
+    ModalBoxMessage.prototype.setCssFile = function (filepath) {
+        var link = document.querySelectorAll('link[data-module="cssPath"')[0];
+        this.currentCssFile = filepath;
+        link.setAttribute("href", filepath);
+    };
     return ModalBoxMessage;
 }());
 exports.ModalBoxMessage = ModalBoxMessage;
 
 },{}],2:[function(require,module,exports){
 var alertClass = require("./ModalBoxMessage.js").ModalBoxMessage;
-var MBM = new alertClass("Error", "anonymous function thrown an error!");
-MBM.Open();
+var alert = new alertClass("Error", "anonymous function thrown an error!");
+alert.Open();
 
 
 

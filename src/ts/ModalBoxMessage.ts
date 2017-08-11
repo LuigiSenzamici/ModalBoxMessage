@@ -330,6 +330,18 @@ class ModalBoxMessage {
         buttonBox: ElementoBase;
         okButton: ElementoButton;
         closeButton: ElementoButton;
+        private cssDefaultFileName = "ModalBoxMessage.css";
+        private cssDefaultFilePath = "node_modules/modal-box-message/dist/";
+        private cssDefaultBasePath = "../";
+        private cssFileName = "ModalBoxMessage.css";
+        private cssFilePath="node_modules/modal-box-message/dist/";
+        private cssBasePath="../";     
+        private currentCssFile = "";   
+            private updateCssLinkRef(){
+                var link = document.querySelectorAll('link[data-module="cssPath"')[0];
+                this.currentCssFile = this.cssBasePath + this.cssFilePath + this.cssFileName
+                link.setAttribute("href", this.currentCssFile);
+            }   
             private genTitolo(parent: any, titolo:string): void {
                 //titleBox
                 this.titleBox = new ElementoBase("div", "MB-titleBox", "MBM-titleBox", parent);
@@ -403,10 +415,16 @@ class ModalBoxMessage {
                 return res;
             }
             private genCssReference():void{
+                var res = document.querySelectorAll('link[data-module="cssPath"');
+                if(res!=null && res!=undefined && res.length > 0)return;
                 let head = document.getElementsByTagName("head")[0];
                 let stile = document.createElement("link");
                 stile.setAttribute("rel","stylesheet");
-                stile.setAttribute("href", "node_modules/Modal-Box-Message/dist/ModalBoxMessage.css");
+                stile.setAttribute("data-module", "cssPath");
+                this.cssBasePath = this.cssDefaultBasePath;
+                this.cssFileName = this.cssDefaultFileName;
+                this.cssFilePath = this.cssDefaultFilePath;
+                stile.setAttribute("href", this.cssDefaultBasePath +  this.cssDefaultFilePath + this.cssDefaultBasePath);
                 head.appendChild(stile);
             }
             constructor(titolo:string = "", messaggio:string="", buttonText:string="Ok") {
@@ -442,6 +460,23 @@ class ModalBoxMessage {
             public setOKButtonText(value:string){
                 this.okButton.setText(value);
             }
+            public setCssFileName(filename:string){
+                this.cssFileName = filename;
+                this.updateCssLinkRef();
+            }
+            public setCssFilePath(filepath:string){
+                this.cssFilePath = filepath;
+                this.updateCssLinkRef();
+            }
+            public setCssBasePath(filebase:string){
+                this.cssBasePath = filebase;
+                this.updateCssLinkRef();
+            }
+            public setCssFile(filepath:string){
+                var link = document.querySelectorAll('link[data-module="cssPath"')[0];
+                this.currentCssFile = filepath;
+                link.setAttribute("href", filepath);
+            }            
 }
 
 export {ModalBoxMessage};
