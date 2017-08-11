@@ -1,12 +1,12 @@
 {
   "name": "modal-box-message",
-  "version": "2.0.8",
-  "description": "A modal box for display a message",
+  "version": "2.0.9",
+  "description": "[style debugged] A modal box for display a message",
   "main": "./dist/ModalBoxMessage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "gulp ts:quickTest",
-    "dist": "gulp dist",
+    "quickTest": "gulp ts:quickTest",
+    "build": "gulp dist",
     "docs": "npm run typedoc -- --options typedoc.json --excludePrivate",
     "typedoc": "typedoc"
   },

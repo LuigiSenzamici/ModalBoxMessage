@@ -66,3 +66,9 @@ MD_API_doc/*
 HTML_doc/*
 .ntvs_analysis.dat.tmp
 *.sln
+.gitattributes
+jasmine.json
+karma.conf.js
+tsconfig.json
+typedoc.json
+
