@@ -1,4 +1,4 @@
-# Modal Box Input
+# Modal Box Message
 
 Simply a Modal Box that display a message
 
