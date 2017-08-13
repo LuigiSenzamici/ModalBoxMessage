@@ -1,6 +1,6 @@
 {
   "name": "modal-box-message",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A modal box for display a message with customizable style",
   "main": "./dist/ModalBoxMessage.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "Modal",
     "Box",
     "Display",
-    "Message"
+    "Message", "customizable", "style"
   ],
   "author": "Luigi Senzamici (luigisenzamici@gmail.com)",
   "license": "MIT",
