@@ -1,6 +1,6 @@
 # Modal Box Message
 
-Simply a Modal Box that display a message
+Simply a Modal Box that display a message with customizable style
 
 ## Getting Started
 ```bash
