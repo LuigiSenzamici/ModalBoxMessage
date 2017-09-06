@@ -424,7 +424,7 @@ class ModalBoxMessage {
                 this.cssBasePath = this.cssDefaultBasePath;
                 this.cssFileName = this.cssDefaultFileName;
                 this.cssFilePath = this.cssDefaultFilePath;
-                stile.setAttribute("href", this.cssDefaultBasePath +  this.cssDefaultFilePath + this.cssDefaultBasePath);
+                stile.setAttribute("href", this.cssDefaultBasePath +  this.cssDefaultFilePath + this.cssFileName);
                 head.appendChild(stile);
             }
             constructor(titolo:string = "", messaggio:string="", buttonText:string="Ok") {

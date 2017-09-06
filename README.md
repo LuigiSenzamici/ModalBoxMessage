@@ -1,7 +1,7 @@
 # Modal Box Message
 
 Simply a Modal Box that display a message with customizable style
-
+[BUGFIX RESOLVED (css don't load)]
 ## Getting Started
 ```bash
 npm install modal-box-message --save

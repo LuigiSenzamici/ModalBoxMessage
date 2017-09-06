@@ -1,6 +1,6 @@
 {
   "name": "modal-box-message",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "description": "A modal box for display a message with customizable style",
   "main": "./dist/ModalBoxMessage.js",
   "scripts": {
